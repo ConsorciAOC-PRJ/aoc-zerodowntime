@@ -1,0 +1,9 @@
+1741644461486:list
+1741644469983:1
+1741644508907:start --service-number 1 --url http://psis.aoc.cat --interval-ms 3000
+1741644528444:start --serviceNumber 1 --url http://psis.aoc.cat --interval-ms 3000
+1741644599656:list
+1741644717056:start 1 --url https://iarxiu.aoc.cat --interval-ms 2500
+1741644725374:stop-all
+1741645019566:list
+1741645075230:start 1 --url https://iarxiu.aoc.cat --interval-ms 3000

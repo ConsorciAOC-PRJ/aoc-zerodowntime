@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Report: PSIS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .summary {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .summary-item {
+            margin-bottom: 10px;
+        }
+        .summary-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .failure {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Test Report: PSIS</h1>
+    
+    <div class="summary">
+        <h2>Summary</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <span class="summary-label">Service Type:</span>
+                <span>REST</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Start Time:</span>
+                <span>2025-03-11T00:07:57.571805200</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">End Time:</span>
+                <span>2025-03-11T00:08:35.523981100</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Duration:</span>
+                <span>37 seconds</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Total Requests:</span>
+                <span>38</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Successful Requests:</span>
+                <span class="success">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Failed Requests:</span>
+                <span class="failure">38</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Success Rate:</span>
+                <span>0,00%</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Min Response Time:</span>
+                <span>0 ms</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Max Response Time:</span>
+                <span>7 ms</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Avg Response Time:</span>
+                <span>0,18 ms</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="chart-container">
+        <canvas id="responseTimeChart"></canvas>
+    </div>
+    
+    <div class="chart-container">
+        <canvas id="statusChart"></canvas>
+    </div>
+    
+    <h2>Test Results</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Status Code</th>
+                <th>Success</th>
+                <th>Response Time (ms)</th>
+                <th>Error Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025-03-11T00:07:57.573317600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>7</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:07:58.586105700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:07:59.583888200</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:00.576094700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:01.574041300</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:02.583765</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:03.585771100</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:04.578401</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:05.580709700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:06.575054800</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:07.576494600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:08.574031600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:09.574097300</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:10.584773700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:11.578647600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:12.579354700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:13.587705100</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:14.584676600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:15.582283700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:16.584043700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:17.581637600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:18.584118800</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:19.577119900</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:20.587971300</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:21.587772100</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:22.583128500</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:23.577616600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:24.587405900</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:25.585949</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:26.579341200</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:27.576071</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:28.574742600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:29.587186300</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:30.576046600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:31.586424500</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:32.578894600</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:33.576466700</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+            <tr>
+                <td>2025-03-11T00:08:34.586102800</td>
+                <td>-1</td>
+                <td class="failure">Failure</td>
+                <td>0</td>
+                <td>URI is not absolute</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="footer">
+        <p>Report generated at: <span>2025-03-11T00:08:35.524494900</span></p>
+    </div>
+    
+    <script>
+        /*<![CDATA[*/
+        const results = [{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:07:57.5733176","statusCode":-1,"success":false,"responseTimeMs":7,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:07:58.5861057","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:07:59.5838882","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:00.5760947","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:01.5740413","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:02.583765","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:03.5857711","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:04.578401","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:05.5807097","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:06.5750548","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:07.5764946","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:08.5740316","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:09.5740973","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:10.5847737","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:11.5786476","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:12.5793547","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:13.5877051","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:14.5846766","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:15.5822837","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:16.5840437","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:17.5816376","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:18.5841188","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:19.5771199","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:20.5879713","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:21.5877721","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:22.5831285","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:23.5776166","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:24.5874059","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:25.585949","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:26.5793412","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:27.576071","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:28.5747426","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:29.5871863","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:30.5760466","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:31.5864245","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:32.5788946","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:33.5764667","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"},{"serviceName":"PSIS","serviceType":"REST","timestamp":"2025-03-11T00:08:34.5861028","statusCode":-1,"success":false,"responseTimeMs":0,"errorMessage":"URI is not absolute"}];
+        
+        // Prepare data for response time chart
+        const timestamps = results.map(r => r.timestamp);
+        const responseTimes = results.map(r => r.responseTimeMs);
+        const successStatus = results.map(r => r.success ? 'Success' : 'Failure');
+        
+        // Create response time chart
+        const rtCtx = document.getElementById('responseTimeChart').getContext('2d');
+        new Chart(rtCtx, {
+            type: 'line',
+            data: {
+                labels: timestamps,
+                datasets: [{
+                    label: 'Response Time (ms)',
+                    data: responseTimes,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    tension: 0.1,
+                    pointBackgroundColor: results.map(r => r.success ? 'rgba(46, 204, 113, 1)' : 'rgba(231, 76, 60, 1)')
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Response Time Over Time'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            afterLabel: function(context) {
+                                return 'Status: ' + successStatus[context.dataIndex];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Response Time (ms)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time'
+                        },
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 45
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Create status distribution chart
+        const statusCounts = {
+            'Success': results.filter(r => r.success).length,
+            'Failure': results.filter(r => !r.success).length
+        };
+        
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(statusCounts),
+                datasets: [{
+                    data: Object.values(statusCounts),
+                    backgroundColor: [
+                        'rgba(46, 204, 113, 0.7)',
+                        'rgba(231, 76, 60, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(231, 76, 60, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Response Status Distribution'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        /*]]>*/
+    </script>
+</body>
+</html>
