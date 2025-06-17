@@ -109,6 +109,42 @@
 			"id": "45957668-53aaac96-afbd-4368-b71f-afb1d8ad278c"
 		},
 		{
+			"name": "PSIS",
+			"item": [
+				{
+					"name": "PSIS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"id": "018025d4-aee9-4747-8a41-2943bb7d4d37"
+							}
+						}
+					],
+					"id": "45957668-c943c5bc-fe2e-4908-82a2-3fbbc572c7f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "45957668-df58d8d5-c0de-4e28-83a4-31f53dce8368"
+		},
+		{
 			"name": "VALID",
 			"event": [
 				{
@@ -126,36 +162,6 @@
 				}
 			],
 			"id": "45957668-032a7c4e-0cea-4fc8-8566-fd7482f87be1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PSIS",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200 or 404\", function () {\r",
-							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"id": "018025d4-aee9-4747-8a41-2943bb7d4d37"
-					}
-				}
-			],
-			"id": "45957668-c943c5bc-fe2e-4908-82a2-3fbbc572c7f8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -210,6 +216,18 @@
 				"url": {
 					"raw": ""
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "VALID",
+			"id": "45957668-ce0bd788-22a8-4294-9fd1-7a6cad49afbe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
