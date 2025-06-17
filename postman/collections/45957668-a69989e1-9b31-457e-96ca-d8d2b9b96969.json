@@ -268,7 +268,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{IARXIU_FRONT_URL}}",
+							"host": [
+								"{{IARXIU_FRONT_URL}}"
+							]
 						}
 					},
 					"response": []
