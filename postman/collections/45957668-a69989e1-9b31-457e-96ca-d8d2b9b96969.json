@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "45957668-a69989e1-9b31-457e-96ca-d8d2b9b96969",
+		"name": "AOC-Zerodowntime",
+		"description": "Proves de zero downtime a serveis de l'AOC.\n\nEs comproba que l'estat de les peticions no sigui cap estat invàlid.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VALID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 or 404\", function () {\r",
+							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "2317e6a8-4c42-4bce-a876-a4be7b17c645"
+					}
+				}
+			],
+			"id": "45957668-032a7c4e-0cea-4fc8-8566-fd7482f87be1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PSIS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 or 404\", function () {\r",
+							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "018025d4-aee9-4747-8a41-2943bb7d4d37"
+					}
+				}
+			],
+			"id": "45957668-c943c5bc-fe2e-4908-82a2-3fbbc572c7f8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HubCarpetes (backend)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 or 404\", function () {\r",
+							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "6ef83c70-69cf-4a71-8fb0-bf3338f7110e"
+					}
+				}
+			],
+			"id": "45957668-3b432167-468b-48c6-ae48-6bcb922bef1f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT_DEV}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hubcarpetes-dev.aoc.cat/api/consultaActuacions?documentIdentificatiu=00000000T&tipusDocumentIdentificatiu=NIF",
+					"protocol": "https",
+					"host": [
+						"hubcarpetes-dev",
+						"aoc",
+						"cat"
+					],
+					"path": [
+						"api",
+						"consultaActuacions"
+					],
+					"query": [
+						{
+							"key": "documentIdentificatiu",
+							"value": "00000000T"
+						},
+						{
+							"key": "tipusDocumentIdentificatiu",
+							"value": "NIF"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HubCarpetes (web)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 or 404\", function () {\r",
+							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "c45a335e-13b1-422e-aaa0-36155a7cbbbc"
+					}
+				}
+			],
+			"id": "45957668-dda6fad3-972b-4438-ae24-8c7011b8d23c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hubcarpetes-dev.aoc.cat",
+					"protocol": "https",
+					"host": [
+						"hubcarpetes-dev",
+						"aoc",
+						"cat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "iArxiu (backend)",
+			"id": "45957668-146e131c-ab29-493c-b10d-5394ade67892",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "iArxiu (web)",
+			"id": "45957668-f683386c-0cf3-4d45-9699-dc277b5fca16",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eNotum (backend)",
+			"id": "45957668-8f122a19-d482-4096-b271-330125e07115",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
