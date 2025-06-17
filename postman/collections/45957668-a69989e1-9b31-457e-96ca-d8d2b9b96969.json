@@ -208,7 +208,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{ENOTUM_BACK_APP_URL}}",
+							"host": [
+								"{{ENOTUM_BACK_APP_URL}}"
+							]
 						}
 					},
 					"response": []
@@ -247,7 +250,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{IARXIU_BACK_URL}}",
+							"host": [
+								"{{IARXIU_BACK_URL}}"
+							]
 						}
 					},
 					"response": []
