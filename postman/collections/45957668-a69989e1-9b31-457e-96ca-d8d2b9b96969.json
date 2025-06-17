@@ -7,8 +7,105 @@
 	},
 	"item": [
 		{
-			"name": "New Folder",
-			"item": [],
+			"name": "HubCarpetes",
+			"item": [
+				{
+					"name": "HubCarpetes (backend)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"id": "6ef83c70-69cf-4a71-8fb0-bf3338f7110e"
+							}
+						}
+					],
+					"id": "45957668-3b432167-468b-48c6-ae48-6bcb922bef1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_DEV}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hubcarpetes-dev.aoc.cat/api/consultaActuacions?documentIdentificatiu=00000000T&tipusDocumentIdentificatiu=NIF",
+							"protocol": "https",
+							"host": [
+								"hubcarpetes-dev",
+								"aoc",
+								"cat"
+							],
+							"path": [
+								"api",
+								"consultaActuacions"
+							],
+							"query": [
+								{
+									"key": "documentIdentificatiu",
+									"value": "00000000T"
+								},
+								{
+									"key": "tipusDocumentIdentificatiu",
+									"value": "NIF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HubCarpetes (web)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"id": "c45a335e-13b1-422e-aaa0-36155a7cbbbc"
+							}
+						}
+					],
+					"id": "45957668-dda6fad3-972b-4438-ae24-8c7011b8d23c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hubcarpetes-dev.aoc.cat",
+							"protocol": "https",
+							"host": [
+								"hubcarpetes-dev",
+								"aoc",
+								"cat"
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"id": "45957668-53aaac96-afbd-4368-b71f-afb1d8ad278c"
 		},
 		{
@@ -67,102 +164,6 @@
 				"header": [],
 				"url": {
 					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "HubCarpetes (backend)",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200 or 404\", function () {\r",
-							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"id": "6ef83c70-69cf-4a71-8fb0-bf3338f7110e"
-					}
-				}
-			],
-			"id": "45957668-3b432167-468b-48c6-ae48-6bcb922bef1f",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{JWT_DEV}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://hubcarpetes-dev.aoc.cat/api/consultaActuacions?documentIdentificatiu=00000000T&tipusDocumentIdentificatiu=NIF",
-					"protocol": "https",
-					"host": [
-						"hubcarpetes-dev",
-						"aoc",
-						"cat"
-					],
-					"path": [
-						"api",
-						"consultaActuacions"
-					],
-					"query": [
-						{
-							"key": "documentIdentificatiu",
-							"value": "00000000T"
-						},
-						{
-							"key": "tipusDocumentIdentificatiu",
-							"value": "NIF"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "HubCarpetes (web)",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200 or 404\", function () {\r",
-							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"id": "c45a335e-13b1-422e-aaa0-36155a7cbbbc"
-					}
-				}
-			],
-			"id": "45957668-dda6fad3-972b-4438-ae24-8c7011b8d23c",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://hubcarpetes-dev.aoc.cat",
-					"protocol": "https",
-					"host": [
-						"hubcarpetes-dev",
-						"aoc",
-						"cat"
-					]
 				}
 			},
 			"response": []
