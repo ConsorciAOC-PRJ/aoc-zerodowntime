@@ -146,33 +146,39 @@
 		},
 		{
 			"name": "VALID",
-			"event": [
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200 or 404\", function () {\r",
-							"  pm.expect([200, 404]).to.include(pm.response.code);\r",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"id": "2317e6a8-4c42-4bce-a876-a4be7b17c645"
-					}
+					"name": "VALID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"id": "2317e6a8-4c42-4bce-a876-a4be7b17c645"
+							}
+						}
+					],
+					"id": "45957668-032a7c4e-0cea-4fc8-8566-fd7482f87be1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "45957668-032a7c4e-0cea-4fc8-8566-fd7482f87be1",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
+			"id": "45957668-c0199996-e580-4192-bd67-6e6dcdb89ed6"
 		},
 		{
 			"name": "iArxiu (backend)",
@@ -216,18 +222,6 @@
 				"url": {
 					"raw": ""
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "VALID",
-			"id": "45957668-ce0bd788-22a8-4294-9fd1-7a6cad49afbe",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
