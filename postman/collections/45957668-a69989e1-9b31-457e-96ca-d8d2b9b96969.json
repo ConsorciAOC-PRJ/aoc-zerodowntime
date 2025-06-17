@@ -181,6 +181,11 @@
 			"id": "45957668-c0199996-e580-4192-bd67-6e6dcdb89ed6"
 		},
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "45957668-07f1831a-85ab-4b8a-9049-dcb97759b400"
+		},
+		{
 			"name": "iArxiu (backend)",
 			"id": "45957668-146e131c-ab29-493c-b10d-5394ade67892",
 			"protocolProfileBehavior": {
