@@ -199,7 +199,7 @@
 					"response": []
 				},
 				{
-					"name": "eNotum Backend",
+					"name": "eNotum APP Backend",
 					"id": "45957668-5cfd36c7-de09-43ca-8e7e-c585b0df9513",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
