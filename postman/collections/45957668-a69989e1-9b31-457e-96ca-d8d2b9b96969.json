@@ -112,7 +112,7 @@
 			"name": "PSIS",
 			"item": [
 				{
-					"name": "PSIS",
+					"name": "PSIS (validacio certificat)",
 					"event": [
 						{
 							"listen": "test",
