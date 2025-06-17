@@ -145,7 +145,10 @@
 							}
 						},
 						"url": {
-							"raw": ""
+							"raw": "{{PSIS_URL}}",
+							"host": [
+								"{{PSIS_URL}}"
+							]
 						}
 					},
 					"response": []
