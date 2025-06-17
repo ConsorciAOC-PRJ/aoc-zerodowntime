@@ -223,7 +223,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{ENOTUM_ADMIN_URL}}",
+							"host": [
+								"{{ENOTUM_ADMIN_URL}}"
+							]
 						}
 					},
 					"response": []
