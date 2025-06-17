@@ -193,7 +193,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "{{ENOTUM_FRONT_CIUTADA_URL}}",
+							"host": [
+								"{{ENOTUM_FRONT_CIUTADA_URL}}"
+							]
 						}
 					},
 					"response": []
@@ -247,7 +250,7 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"url": {
 							"raw": "{{IARXIU_BACK_URL}}",
