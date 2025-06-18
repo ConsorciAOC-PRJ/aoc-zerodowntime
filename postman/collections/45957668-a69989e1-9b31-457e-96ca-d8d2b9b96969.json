@@ -257,6 +257,21 @@
 			"item": [
 				{
 					"name": "iARXIU (backend)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4fb4e642-8bde-4b06-976c-66854b739f0a",
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "45957668-146e131c-ab29-493c-b10d-5394ade67892",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -284,6 +299,21 @@
 				},
 				{
 					"name": "iARXIU (web)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9db27cd6-1820-431f-a05b-f18649bc03aa",
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "45957668-f683386c-0cf3-4d45-9699-dc277b5fca16",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
