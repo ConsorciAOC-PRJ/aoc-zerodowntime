@@ -305,7 +305,20 @@
 		},
 		{
 			"name": "Signasuite",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "45957668-958fc68c-5dd2-4f5c-b666-190857eaf822",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "45957668-13a38b76-4446-4d17-bdf5-e3026b040992"
 		}
 	]
