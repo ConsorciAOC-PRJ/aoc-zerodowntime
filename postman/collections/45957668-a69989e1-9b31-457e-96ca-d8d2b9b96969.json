@@ -75,14 +75,14 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "c45a335e-13b1-422e-aaa0-36155a7cbbbc",
 								"exec": [
 									"pm.test(\"Status code is 200 or 404\", function () {\r",
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "c45a335e-13b1-422e-aaa0-36155a7cbbbc"
+								"packages": {}
 							}
 						}
 					],
@@ -94,10 +94,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://hubcarpetes-dev.aoc.cat",
+							"raw": "https://hubcarpetes.aoc.cat",
 							"protocol": "https",
 							"host": [
-								"hubcarpetes-dev",
+								"hubcarpetes",
 								"aoc",
 								"cat"
 							]
