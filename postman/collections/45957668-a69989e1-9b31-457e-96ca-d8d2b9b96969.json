@@ -15,14 +15,14 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "6ef83c70-69cf-4a71-8fb0-bf3338f7110e",
 								"exec": [
 									"pm.test(\"Status code is 200 or 404\", function () {\r",
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "6ef83c70-69cf-4a71-8fb0-bf3338f7110e"
+								"packages": {}
 							}
 						}
 					],
@@ -36,7 +36,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{JWT_DEV}}",
+									"value": "{{HCC_JWT}}",
 									"type": "string"
 								}
 							]
@@ -44,10 +44,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://hubcarpetes-dev.aoc.cat/api/consultaActuacions?documentIdentificatiu=00000000T&tipusDocumentIdentificatiu=NIF",
+							"raw": "https://hubcarpetes.aoc.cat/api/consultaActuacions?documentIdentificatiu=12345678A&tipusDocumentIdentificatiu=NIF",
 							"protocol": "https",
 							"host": [
-								"hubcarpetes-dev",
+								"hubcarpetes",
 								"aoc",
 								"cat"
 							],
@@ -58,7 +58,7 @@
 							"query": [
 								{
 									"key": "documentIdentificatiu",
-									"value": "00000000T"
+									"value": "12345678A"
 								},
 								{
 									"key": "tipusDocumentIdentificatiu",
