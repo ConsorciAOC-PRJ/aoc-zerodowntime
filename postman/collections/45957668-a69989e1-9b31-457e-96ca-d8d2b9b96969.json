@@ -79,10 +79,25 @@
 								"exec": [
 									"pm.test(\"Status code is 200 or 404\", function () {\r",
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});\r",
+									"\r",
+									"const $ = cheerio.load(pm.response.text());\r",
+									"const titleText = $('title').text();\r",
+									"const expectedTitle = \"HCC Admin\"; // Replace with your expected title\r",
+									"\r",
+									"pm.test(\"HTML title check\", () => {\r",
+									"  pm.expect(titleText).to.eql(expectedTitle);\r",
 									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
