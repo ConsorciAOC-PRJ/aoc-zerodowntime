@@ -307,7 +307,7 @@
 			"name": "Signasuite",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Signasuite",
 					"id": "45957668-958fc68c-5dd2-4f5c-b666-190857eaf822",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
