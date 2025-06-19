@@ -311,8 +311,8 @@
 							"script": {
 								"id": "9db27cd6-1820-431f-a05b-f18649bc03aa",
 								"exec": [
-									"pm.test(\"Status code is 200 or 404\", function () {\r",
-									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.expect([200]).to.include(pm.response.code);\r",
 									"});"
 								],
 								"type": "text/javascript",
