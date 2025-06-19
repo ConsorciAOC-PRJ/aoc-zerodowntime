@@ -278,8 +278,8 @@
 							"script": {
 								"id": "4fb4e642-8bde-4b06-976c-66854b739f0a",
 								"exec": [
-									"pm.test(\"Status code is 200 or 404\", function () {\r",
-									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.expect([200]).to.include(pm.response.code);\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -292,17 +292,8 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "<soapenv:Envelope xmlns:ing=\"http://schemas.core.iarxiu.hp.com/2.0/ingest\" xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n   <soapenv:Header>      \r\n      <ish:Context wsu:Id=\"id-15308417\" xmlns:ish=\"http://soap.iarxiu/headers\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\r\n         <saml2:Assertion ID=\"AssertId-1224234511549\" Version=\"2.0\" IssueInstant=\"2015-09-01T12:00:00.000+02:00\" xmlns:saml2=\"urn:oasis:names:tc:SAML:2.0:assertion\">\r\n            <saml2:Issuer>aa</saml2:Issuer>\r\n            <saml2:Subject>\r\n               <saml2:SubjectConfirmation Method=\"urn:oasis:names:tc:SAML:2.0:cm:sender-vouches\">\r\n                  <saml2:NameID>aa</saml2:NameID>\r\n               </saml2:SubjectConfirmation>\r\n            </saml2:Subject>\r\n            <saml2:AttributeStatement>\r\n               <saml2:Attribute Name=\"urn:iarxiu:2.0:names:organizationAlias\">\r\n                  <saml2:AttributeValue>aa</saml2:AttributeValue>\r\n               </saml2:Attribute>\r\n               <saml2:Attribute Name=\"urn:iarxiu:2.0:names:fondsAlias\">\r\n                  <saml2:AttributeValue>aa}</saml2:AttributeValue>\r\n               </saml2:Attribute>\r\n               <saml2:Attribute Name=\"urn:iarxiu:2.0:names:member-of\">\r\n                  <saml2:AttributeValue>aa</saml2:AttributeValue>\r\n               </saml2:Attribute>\r\n            </saml2:AttributeStatement>\r\n         </saml2:Assertion>\r\n      </ish:Context>\r\n   </soapenv:Header>\r\n   <soapenv:Body wsu:Id=\"id-15E3F42523F1E06F65144118376813925\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\r\n      <ing:GetUploadTicketRequest/>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
-							"options": {
-								"raw": {
-									"language": "xml"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{IARXIU_BACK_URL}}",
 							"host": [
