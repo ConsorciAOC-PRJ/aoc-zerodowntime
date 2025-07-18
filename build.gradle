@@ -1,0 +1,82 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+/**
+ * DOWNTIME CHECKER
+ *
+ * Aquest build gradle per llençar el newman dels diferents projectes amb N iteracions per a comprovar el temps de tall de servei durant
+ * els desplegaments
+ *
+ * @author albciff
+ *
+ */
+def newmanExecution(String postmanPrj, String iterations){
+    
+
+    String newman = 'newman';
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        newman = 'newman.cmd'
+    }
+
+    println "Postman PRJ: ${postmanPrj}"
+    println "Iterations: ${iterations}"
+
+
+    def wkDir = "./postman"
+    def resFolder = "./postman/${postmanPrj}-results"
+
+    def outputStream = new ByteArrayOutputStream()
+    
+    exec {
+        workingDir "${wkDir}"
+
+        // amb una list em permet veure més facilment la comanda final
+        def cmdList = [
+                        'cmd','/c', newman, 'run', '-x', "collections/45957668-a69989e1-9b31-457e-96ca-d8d2b9b96969.json",
+                        '--iteration-count',"${iterations}", 
+                        '--folder',"${postmanPrj}",
+                        '-r', 'cli,progress,htmlextra',
+                        '--reporter-htmlextra-export', "${resFolder}/${postmanPrj}-htmlextra-run.html",
+                        '--reporter-htmlextra-hideResponseBody', 'eNotum AAPP SPA,eNotum Ciutada SPA',
+                        '--disable-unicode'
+                    ]
+
+        println "command: " + cmdList.join(" ")
+
+        commandLine cmdList
+
+        standardOutput = outputStream
+    }
+
+    println new String(outputStream.toByteArray(), 'UTF-8')
+}
+
+task enotumBackend() {
+    // config phase
+    description "Execute config phase for ${name}"
+
+    doLast {
+        // Set property on target task
+        newmanExecution("eNotum Backend","1")
+    }
+}
+
+task enotumCiutadania() {
+    // config phase
+    description "Execute config phase for ${name}"
+
+    doLast {
+        // Set property on target task
+        newmanExecution("eNotum Ciutadania","10")
+    }
+}
+
+task enotumAAPP() {
+    // config phase
+    description "Execute config phase for ${name}"
+
+    doLast {
+        // Set property on target task
+        newmanExecution("eNotum AAPP","11")
+    }
+}
+
