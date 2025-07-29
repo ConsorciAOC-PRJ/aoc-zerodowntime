@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "204f46bd-1a1e-466d-903e-eeff152f0659",
+		"_postman_id": "45957668-a69989e1-9b31-457e-96ca-d8d2b9b96969",
 		"name": "AOC-Zerodowntime",
 		"description": "Proves de zero downtime a serveis de l'AOC.\n\nEs comproba que l'estat de les peticions no sigui cap estat invàlid.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "36473556"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -16,6 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "6ef83c70-69cf-4a71-8fb0-bf3338f7110e",
 								"exec": [
 									"pm.test(\"Status code is 200 or 404\", function () {\r",
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
@@ -26,6 +26,10 @@
 							}
 						}
 					],
+					"id": "45957668-3b432167-468b-48c6-ae48-6bcb922bef1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -71,6 +75,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "c45a335e-13b1-422e-aaa0-36155a7cbbbc",
 								"exec": [
 									"pm.test(\"Status code is 200 or 404\", function () {\r",
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
@@ -96,6 +101,10 @@
 							}
 						}
 					],
+					"id": "45957668-dda6fad3-972b-4438-ae24-8c7011b8d23c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -111,7 +120,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "45957668-53aaac96-afbd-4368-b71f-afb1d8ad278c"
 		},
 		{
 			"name": "PSIS",
@@ -122,9 +132,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "018025d4-aee9-4747-8a41-2943bb7d4d37",
 								"exec": [
-									"pm.test(\"Status code is 200 or 404\", function () {\r",
-									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"pm.test(\"Response contains resultat: 'ok'\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.text()).to.include(\"Definitive\");\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -132,6 +144,10 @@
 							}
 						}
 					],
+					"id": "45957668-c943c5bc-fe2e-4908-82a2-3fbbc572c7f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -153,7 +169,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "45957668-df58d8d5-c0de-4e28-83a4-31f53dce8368"
 		},
 		{
 			"name": "VALID",
@@ -170,10 +187,15 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"id": "2317e6a8-4c42-4bce-a876-a4be7b17c645"
 							}
 						}
 					],
+					"id": "45957668-032a7c4e-0cea-4fc8-8566-fd7482f87be1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -183,223 +205,68 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "45957668-c0199996-e580-4192-bd67-6e6dcdb89ed6"
 		},
 		{
-			"name": "eNotum Backend",
+			"name": "eNotum",
 			"item": [
 				{
-					"name": "eNotum Backend",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Codi 1 es correspon amb Generalitat de Catalunya\", () => {\r",
-									"  const responseJson = pm.response.json();\r",
-									"  pm.expect(responseJson.nom).to.eql(\"Generalitat de Catalunya\");\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://enotum.int.aoc.cat:8083/api/organismes/1",
-							"protocol": "http",
-							"host": [
-								"enotum",
-								"int",
-								"aoc",
-								"cat"
-							],
-							"port": "8083",
-							"path": [
-								"api",
-								"organismes",
-								"1"
-							]
-						}
+					"name": "eNotum Front Ciutada",
+					"id": "45957668-8f122a19-d482-4096-b271-330125e07115",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
 					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "eNotum Ciutadania",
-			"item": [
-				{
-					"name": "eNotum Ciutada API",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Codi 1 es correspon amb Generalitat de Catalunya\", () => {\r",
-									"  const responseJson = pm.response.json();\r",
-									"  pm.expect(responseJson.nom).to.eql(\"Generalitat de Catalunya\");\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.enotum.cat/ciutadania/organismes/1",
-							"protocol": "https",
+							"raw": "{{ENOTUM_FRONT_CIUTADA_URL}}",
 							"host": [
-								"api",
-								"enotum",
-								"cat"
-							],
-							"path": [
-								"ciutadania",
-								"organismes",
-								"1"
+								"{{ENOTUM_FRONT_CIUTADA_URL}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "eNotum Ciutada SPA",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Validar contingut HTML\",() => {\r",
-									"  pm.expect(pm.response.text()).to.include(\"<app-root></app-root>\");\r",
-									"  pm.expect(pm.response.text()).to.include(\"<title>e-NOTUM</title>\");\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://usuari.enotum.cat/",
-							"protocol": "https",
-							"host": [
-								"usuari",
-								"enotum",
-								"cat"
-							],
-							"path": [
-								""
-							]
-						}
+					"name": "eNotum APP Backend",
+					"id": "45957668-5cfd36c7-de09-43ca-8e7e-c585b0df9513",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
 					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "eNotum AAPP",
-			"item": [
-				{
-					"name": "eNotum AAPP API",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"healthCheck status is UP\", () => {\r",
-									"  const responseJson = pm.response.json();\r",
-									"  pm.expect(responseJson.status).to.eql(\"UP\");\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://enotum.int.aoc.cat:8081/actuator/health",
-							"protocol": "http",
+							"raw": "{{ENOTUM_BACK_APP_URL}}",
 							"host": [
-								"enotum",
-								"int",
-								"aoc",
-								"cat"
-							],
-							"port": "8081",
-							"path": [
-								"actuator",
-								"health"
+								"{{ENOTUM_BACK_APP_URL}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "eNotum AAPP SPA",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"  pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Validar contingut HTML\",() => {\r",
-									"  pm.expect(pm.response.text()).to.include(\"<app-root></app-root>\");\r",
-									"  pm.expect(pm.response.text()).to.include(\"<title>EACAT - ENOTUM</title>\");\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
+					"name": "eNotum Admin",
+					"id": "45957668-513a392a-1da7-464b-9868-21cea1c9f109",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://eacat.enotum.cat",
-							"protocol": "https",
+							"raw": "{{ENOTUM_ADMIN_URL}}",
 							"host": [
-								"eacat",
-								"enotum",
-								"cat"
+								"{{ENOTUM_ADMIN_URL}}"
 							]
 						}
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "45957668-07f1831a-85ab-4b8a-9049-dcb97759b400"
 		},
 		{
 			"name": "iARXIU",
@@ -410,6 +277,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "4fb4e642-8bde-4b06-976c-66854b739f0a",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"  pm.expect([200]).to.include(pm.response.code);\r",
@@ -420,6 +288,10 @@
 							}
 						}
 					],
+					"id": "45957668-146e131c-ab29-493c-b10d-5394ade67892",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -438,6 +310,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "9db27cd6-1820-431f-a05b-f18649bc03aa",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"  pm.expect([200]).to.include(pm.response.code);\r",
@@ -448,6 +321,10 @@
 							}
 						}
 					],
+					"id": "45957668-f683386c-0cf3-4d45-9699-dc277b5fca16",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -460,7 +337,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "45957668-c7dc727e-a37a-4f00-935b-c5255a4285c9"
 		},
 		{
 			"name": "Signasuite",
@@ -471,6 +349,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "d1f643d6-1cef-483b-893d-80feaab196d5",
 								"exec": [
 									"pm.test(\"Status code is 200 or 404\", function () {\r",
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
@@ -481,6 +360,10 @@
 							}
 						}
 					],
+					"id": "45957668-958fc68c-5dd2-4f5c-b666-190857eaf822",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -493,7 +376,273 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"id": "45957668-13a38b76-4446-4d17-bdf5-e3026b040992"
+		},
+		{
+			"name": "MUX",
+			"item": [
+				{
+					"name": "Destinatari (auth)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "53b985db-b256-4e48-a98c-4cf8283bf8c3",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"  pm.expect([401]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "45957668-dee6a063-4eb2-4949-b3b4-695e803e99d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MUX_URL}}/mestres/destinatari",
+							"host": [
+								"{{MUX_URL}}"
+							],
+							"path": [
+								"mestres",
+								"destinatari"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "silenci  (auth)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f2da78d8-6115-4f5b-84e6-c0b8581a5b31",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"  pm.expect([401]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "45957668-a71940d9-eb66-41ba-bb89-874fc0570a93",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MUX_URL}}/mestres/efecteSilenci",
+							"host": [
+								"{{MUX_URL}}"
+							],
+							"path": [
+								"mestres",
+								"efecteSilenci"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mailboxes  (auth)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ffa71744-6134-4389-8194-d393b407dda4",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"  pm.expect([401]).to.include(pm.response.code);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "45957668-fed4df3a-f128-493c-b671-daad51417958",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MUX_URL}}/bustia/B094E62AE409/llegir",
+							"host": [
+								"{{MUX_URL}}"
+							],
+							"path": [
+								"bustia",
+								"B094E62AE409",
+								"llegir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eacat (public)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3b08f3c-09fd-45f3-ae34-0787e331d251",
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {\r",
+									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains resultat: 'ok'\", function () {   \r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.resultat).to.eql(\"ok\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "45957668-7f6318a1-1aaa-4623-80f4-52d5d7783c4c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MUX_URL}}/uo-eacat?p=1&rp=10",
+							"host": [
+								"{{MUX_URL}}"
+							],
+							"path": [
+								"uo-eacat"
+							],
+							"query": [
+								{
+									"key": "p",
+									"value": "1"
+								},
+								{
+									"key": "rp",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Localitats  (public)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb980a7d-7ddc-4959-b52f-b9dea5b989a9",
+								"exec": [
+									"pm.test(\"Response contains resultat: 'ok'\", function () {   \r",
+									"    pm.response.to.have.status(200);\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.resultat).to.eql(\"ok\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "45957668-b155ad80-5e47-4ce1-8099-94fde0384f35",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MUX_URL}}/localitat?p=1&rp=10",
+							"host": [
+								"{{MUX_URL}}"
+							],
+							"path": [
+								"localitat"
+							],
+							"query": [
+								{
+									"key": "p",
+									"value": "1"
+								},
+								{
+									"key": "rp",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DIR3  (public)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "195de691-1269-4139-af06-21333363f009",
+								"exec": [
+									"pm.test(\"Response contains resultat: 'ok'\", function () {   \r",
+									"    pm.response.to.have.status(200);\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.resultat).to.eql(\"ok\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "45957668-41b3a028-09e2-45c5-b0ec-d8585e86f8df",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MUX_URL}}/uo-dir3?p=1&rp=20",
+							"host": [
+								"{{MUX_URL}}"
+							],
+							"path": [
+								"uo-dir3"
+							],
+							"query": [
+								{
+									"key": "p",
+									"value": "1"
+								},
+								{
+									"key": "rp",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "45957668-a2272d3b-f5bf-40b3-b4be-432a31f427e8"
 		}
 	]
 }
