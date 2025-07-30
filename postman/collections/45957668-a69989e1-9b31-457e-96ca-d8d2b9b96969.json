@@ -506,7 +506,7 @@
 									"  pm.expect([200, 404]).to.include(pm.response.code);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Response contains resultat: 'ok'\", function () {   \r",
+									"pm.test(\"Response contains ok\", function () {   \r",
 									"    const jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.resultat).to.eql(\"ok\");\r",
 									"});"
